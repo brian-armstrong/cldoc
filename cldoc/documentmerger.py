@@ -41,10 +41,6 @@ class DocumentMerger:
                     continue
 
             if line.startswith(prefix) and line.endswith('>'):
-                if len(doc) > 0 and not category:
-                    sys.stderr.write('Failed to merge file `{0}\': no #<cldoc:id> specified\n'.format(filename))
-                    sys.exit(1)
-
                 if category:
                     if not category in ret:
                         ordered.append(category)
